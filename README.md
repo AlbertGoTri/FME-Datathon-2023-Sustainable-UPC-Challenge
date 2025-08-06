@@ -48,9 +48,9 @@ The project analyzes UPC student mobility data to understand:
 
 ### 1. Transportation Categorization
 Transportation modes were categorized into three groups:
-- **🚗 Private Transport**: Combustion vehicles, electric vehicles, motorcycles, taxis
-- **🚌 Public Transport**: Metro, bus, train (Renfe), FGC, tram
-- **🚶 Active Transport**: Walking, bicycle
+- ** Private Transport**: Combustion vehicles, electric vehicles, motorcycles, taxis
+- ** Public Transport**: Metro, bus, train (Renfe), FGC, tram
+- ** Active Transport**: Walking, bicycle
 
 ### 2. Decision Factors
 The reasons why students choose each transportation mode were analyzed:
@@ -124,11 +124,10 @@ pip install pandas numpy matplotlib seaborn folium shapely branca scipy
 ## 👥 Team
 
 Project developed as part of FME Datathon 2023 - Sustainable UPC Challenge.
-
-## 📄 License
-
-This project was developed for academic and research purposes to promote sustainable mobility in the university environment.
-
+- Albert Gómez
+- Amadeu Moya
+- Jordi G.B
+- Miquel Rodríguez
 ---
 
 *🌍 Contributing to a more sustainable future through data analysis* 🌱
