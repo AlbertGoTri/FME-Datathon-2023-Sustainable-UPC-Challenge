@@ -1,134 +1,134 @@
 # FME Datathon 2023 - Sustainable UPC Challenge 🚲🌱
 
-## Análisis de Movilidad Sostenible en la UPC
+## Sustainable Mobility Analysis at UPC
 
-Este proyecto fue desarrollado para el **FME Datathon 2023**, específicamente para el **Sustainable UPC Challenge**. El objetivo principal es analizar los patrones de movilidad de los estudiantes de la Universitat Politècnica de Catalunya (UPC) y proporcionar insights para promover un transporte más sostenible.
+This project was developed for the **FME Datathon 2023**, specifically for the **Sustainable UPC Challenge**. The main objective is to analyze mobility patterns of students at Universitat Politècnica de Catalunya (UPC) and provide insights to promote more sustainable transportation.
 
-## 📊 Descripción del Proyecto
+## 📊 Project Description
 
-El proyecto analiza datos de movilidad de estudiantes de la UPC para entender:
-- **Patrones de transporte**: Cómo se desplazan los estudiantes entre sus hogares y los diferentes centros de la UPC
-- **Preferencias de movilidad**: Qué factores influyen en la elección del medio de transporte
-- **Impacto ambiental**: Análisis de la sostenibilidad de los diferentes medios de transporte utilizados
-- **Infraestructura existente**: Mapeo de la infraestructura de transporte público y bicicletas
+The project analyzes UPC student mobility data to understand:
+- **Transportation patterns**: How students commute between their homes and different UPC campuses
+- **Mobility preferences**: What factors influence transportation mode choice
+- **Environmental impact**: Analysis of the sustainability of different transportation modes used
+- **Existing infrastructure**: Mapping of public transportation and bicycle infrastructure
 
-## 🗂️ Estructura del Proyecto
+## 🗂️ Project Structure
 
 ```
 ├── data/
-│   ├── preprocessed.csv              # Datos procesados principales
-│   ├── preprocessed_co2.csv          # Datos con métricas de CO2
-│   ├── bicis_coordenades.csv         # Coordenadas de estaciones de bicicletas
-│   └── coordenades2.csv              # Datos geoespaciales de transporte
+│   ├── preprocessed.csv              # Main processed data
+│   ├── preprocessed_co2.csv          # Data with CO2 metrics
+│   ├── bicis_coordenades.csv         # Bicycle station coordinates
+│   └── coordenades2.csv              # Transportation geospatial data
 ├── src/
-│   ├── preprocessing.ipynb           # Limpieza y preprocesamiento de datos
-│   ├── insights.ipynb                # Análisis estadístico y correlaciones
-│   └── plotting.ipynb                # Visualizaciones y mapas interactivos
+│   ├── preprocessing.ipynb           # Data cleaning and preprocessing
+│   ├── insights.ipynb                # Statistical analysis and correlations
+│   └── plotting.ipynb                # Visualizations and interactive maps
 └── visualisation/
-    ├── HTML/                         # Mapas interactivos generados
+    ├── HTML/                         # Generated interactive maps
     │   ├── heatmap.html
     │   ├── circle_lines.html
     │   └── pt_lines.html
-    └── PNG/                          # Gráficos estáticos
+    └── PNG/                          # Static graphics
         ├── heatmap.png
         ├── metro_bike_transportation.png
         └── pt_lines.png
 ```
 
-## 🔧 Tecnologías Utilizadas
+## 🔧 Technologies Used
 
-- **Python**: Lenguaje principal de análisis
-- **Pandas**: Manipulación y análisis de datos
-- **Folium**: Visualizaciones geoespaciales interactivas
-- **Matplotlib/Seaborn**: Gráficos estadísticos
-- **Shapely**: Procesamiento de datos geométricos
-- **Scipy**: Análisis estadístico avanzado
+- **Python**: Main analysis language
+- **Pandas**: Data manipulation and analysis
+- **Folium**: Interactive geospatial visualizations
+- **Matplotlib/Seaborn**: Statistical graphics
+- **Shapely**: Geometric data processing
+- **Scipy**: Advanced statistical analysis
 
-## 📈 Análisis Principales
+## 📈 Main Analysis
 
-### 1. Categorización de Transporte
-Los medios de transporte se categorizaron en tres grupos:
-- **🚗 Transporte Privado**: Vehículos de combustión, eléctricos, motos, taxis
-- **🚌 Transporte Público**: Metro, autobús, tren (Renfe), FGC, tranvía
-- **🚶 Transporte Activo**: A pie, bicicleta
+### 1. Transportation Categorization
+Transportation modes were categorized into three groups:
+- **🚗 Private Transport**: Combustion vehicles, electric vehicles, motorcycles, taxis
+- **🚌 Public Transport**: Metro, bus, train (Renfe), FGC, tram
+- **🚶 Active Transport**: Walking, bicycle
 
-### 2. Factores de Decisión
-Se analizaron los motivos por los cuales los estudiantes eligen cada medio de transporte:
-- Rapidez (`r_fastest`)
-- Economía (`r_cheapest`) 
-- Comodidad (`r_confortable`)
-- Única opción disponible (`r_onlyoption`)
-- Razones ambientales (`r_environmental`)
-- Salud (`r_healthiest`)
-- Necesidad de transporte privado (`r_needprivate`)
+### 2. Decision Factors
+The reasons why students choose each transportation mode were analyzed:
+- Speed (`r_fastest`)
+- Economy (`r_cheapest`) 
+- Comfort (`r_confortable`)
+- Only available option (`r_onlyoption`)
+- Environmental reasons (`r_environmental`)
+- Health (`r_healthiest`)
+- Need for private transport (`r_needprivate`)
 
-### 3. Análisis Geoespacial
-- **Mapas de calor**: Distribución de estudiantes por código postal
-- **Rutas principales**: Conexiones más utilizadas entre residencias y centros UPC
-- **Infraestructura**: Ubicación de estaciones de bicicletas y transporte público
-- **Análisis temporal**: Estimación de tiempos de viaje según el medio de transporte
+### 3. Geospatial Analysis
+- **Heat maps**: Student distribution by postal code
+- **Main routes**: Most used connections between residences and UPC campuses
+- **Infrastructure**: Location of bicycle stations and public transport
+- **Temporal analysis**: Travel time estimation according to transportation mode
 
-## 🗺️ Visualizaciones Principales
+## 🗺️ Main Visualizations
 
-### Mapas Interactivos
-1. **Mapa de Calor**: Muestra la densidad de estudiantes por área geográfica
-2. **Mapa de Flujos**: Visualiza las rutas más populares con flechas proporcionales al número de usuarios
-3. **Infraestructura**: Muestra estaciones de bicicletas, paradas de metro y rutas de transporte público
+### Interactive Maps
+1. **Heat Map**: Shows student density by geographical area
+2. **Flow Map**: Visualizes the most popular routes with arrows proportional to number of users
+3. **Infrastructure**: Shows bicycle stations, metro stops and public transport routes
 
-### Análisis Estadísticos
-- **Matriz de correlación**: Relaciones entre diferentes factores de decisión
-- **Distribución por centros**: Análisis de preferencias de transporte por centro UPC
-- **Segmentación demográfica**: Patrones según género, año de estudio, etc.
+### Statistical Analysis
+- **Correlation matrix**: Relationships between different decision factors
+- **Distribution by campus**: Analysis of transport preferences by UPC campus
+- **Demographic segmentation**: Patterns according to gender, year of study, etc.
 
-## 🏃‍♂️ Cómo Ejecutar el Proyecto
+## 🏃‍♂️ How to Run the Project
 
-### Requisitos
+### Requirements
 ```bash
 pip install pandas numpy matplotlib seaborn folium shapely branca scipy
 ```
 
-### Ejecución
-1. **Preprocesamiento**: Ejecutar `src/preprocessing.ipynb`
-2. **Análisis**: Ejecutar `src/insights.ipynb`
-3. **Visualizaciones**: Ejecutar `src/plotting.ipynb`
+### Execution
+1. **Preprocessing**: Run `src/preprocessing.ipynb`
+2. **Analysis**: Run `src/insights.ipynb`
+3. **Visualizations**: Run `src/plotting.ipynb`
 
-## 📊 Principales Hallazgos
+## 📊 Key Findings
 
-### Distribución de Transporte
-- **37.2%** de los viajes utilizan transporte activo
-- **43.4%** utilizan transporte público
-- **19.4%** utilizan transporte privado
+### Transportation Distribution
+- **37.2%** of trips use active transport
+- **43.4%** use public transport
+- **19.4%** use private transport
 
-### Factores Más Influyentes
-1. **Rapidez**: Factor más valorado por los estudiantes
-2. **Comodidad**: Segundo factor en importancia
-3. **Consideraciones ambientales**: Menor influencia en la decisión
+### Most Influential Factors
+1. **Speed**: Most valued factor by students
+2. **Comfort**: Second most important factor
+3. **Environmental considerations**: Lower influence on decision
 
-### Patrones Geográficos
-- Mayor uso de transporte público en áreas bien conectadas
-- Transporte privado predominante en zonas periféricas
-- Transporte activo popular en distancias cortas al centro de Barcelona
+### Geographic Patterns
+- Greater use of public transport in well-connected areas
+- Private transport predominant in peripheral areas
+- Active transport popular for short distances to Barcelona city center
 
-## 🎯 Impacto y Recomendaciones
+## 🎯 Impact and Recommendations
 
-### Para la Sostenibilidad
-1. **Promoción del transporte activo** en distancias cortas
-2. **Mejora de conexiones de transporte público** desde áreas con alta dependencia del transporte privado
-3. **Incentivos** para el uso de medios de transporte sostenibles
+### For Sustainability
+1. **Promotion of active transport** for short distances
+2. **Improvement of public transport connections** from areas with high private transport dependency
+3. **Incentives** for the use of sustainable transportation modes
 
-### Para la Infraestructura
-1. **Expansión de la red de bicicletas** en rutas populares
-2. **Optimización de horarios** de transporte público según patrones de estudiantes
-3. **Puntos de intercambio modal** estratégicamente ubicados
+### For Infrastructure
+1. **Expansion of bicycle network** on popular routes
+2. **Optimization of public transport schedules** according to student patterns
+3. **Modal interchange points** strategically located
 
-## 👥 Equipo
+## 👥 Team
 
-Proyecto desarrollado como parte del FME Datathon 2023 - Sustainable UPC Challenge.
+Project developed as part of FME Datathon 2023 - Sustainable UPC Challenge.
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto fue desarrollado con fines académicos y de investigación para promover la movilidad sostenible en el entorno universitario.
+This project was developed for academic and research purposes to promote sustainable mobility in the university environment.
 
 ---
 
-*🌍 Contribuyendo a un futuro más sostenible a través del análisis de datos* 🌱
+*🌍 Contributing to a more sustainable future through data analysis* 🌱
